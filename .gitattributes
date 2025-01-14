@@ -1,0 +1,12 @@
+# Set default normalization for all text files
+* text=auto
+
+# Force LF for XML files
+*.xml text eol=lf
+
+# Force LF for Java files
+*.java text eol=lf
+
+# Optionally, you can include specific rules for IDEA files
+*.iml text eol=lf
+*.xml text eol=lf
