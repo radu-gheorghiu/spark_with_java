@@ -34,5 +34,13 @@ public class Application {
                 .orderBy(df.col("last_name").asc());
 
         df.show();
+
+        Dataset<Row> df2 = spark.read().format("csv")
+                .option("header", true)
+                .load("src/main/resources/sample_data.csv");
+
+        df2.select("ID", "Name", "Salary", "Department")
+                .where("Salary > 50000")
+                .show();
     }
 }
