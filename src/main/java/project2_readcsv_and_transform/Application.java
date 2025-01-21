@@ -1,14 +1,20 @@
-package project2;
+package project2_readcsv_and_transform;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 
 import static org.apache.spark.sql.functions.concat;
 import static org.apache.spark.sql.functions.lit;
 
+import project3_write_to_sqlite.SQLiteWriter;
+
+import java.sql.SQLException;
+import java.util.Properties;
+
 public class Application {
-    public static void main(String args[]){
+    public static void main(String args[]) throws SQLException {
 
         // create a session
         SparkSession spark = new SparkSession.Builder()
@@ -39,5 +45,16 @@ public class Application {
         df.filter(
                 df.col("Full Name").rlike("e")
         ).show();
+
+        SQLiteWriter writer = SQLiteWriter.getInstance("data\\sparkwriterapp.db");
+
+        String dbConnectionUrl = "jdbc:sqlite:data\\sparkwriterapp.db";
+        Properties prop = new Properties();
+        prop.setProperty("driver", "org.sqlite.JDBC");
+
+        df.write()
+                .mode(SaveMode.Overwrite)
+                .jdbc(dbConnectionUrl, "project2", prop);
+
     }
 }

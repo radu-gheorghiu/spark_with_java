@@ -1,13 +1,10 @@
-package project1;
+package project1_simpledemo;
 
 import static org.apache.spark.sql.functions.concat;
 import static org.apache.spark.sql.functions.lit;
 
-import java.util.Properties;
-
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 
 public class Application {
