@@ -1,4 +1,4 @@
-package project1_simpledemo;
+package L1_Introduction.project1_simpledemo;
 
 import static org.apache.spark.sql.functions.concat;
 import static org.apache.spark.sql.functions.lit;

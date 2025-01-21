@@ -1,4 +1,4 @@
-package project3_write_to_sqlite;
+package L1_Introduction.project3_write_to_sqlite;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

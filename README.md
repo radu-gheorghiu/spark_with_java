@@ -4,7 +4,7 @@
 
 Although I have some professional experience with Spark, I haven't worked with the Java API and I need to have my skills sharpened for a new project I am going to be part of. I've had colleagues recommend this course to me, so I decided to also take up some random notes of things I want to refresh and remember.
 
-### Section 1. Introduction
+### Section 1. L1_Introduction
 
 The processing of data is **always** done on the **Workers**! All the work is done by the Workers!
 
@@ -30,7 +30,7 @@ In the real world, data is distributed on a filesystem, like the Hadoop filesyst
 
 ![distributed_filesystem](/media/img4.png)
 
-### Node responsibilities in the cluster [1.8 - Introduction.Spark Standalone Cluster Architecture]
+### Node responsibilities in the cluster [1.8 - L1_Introduction.Spark Standalone Cluster Architecture]
 
 1. Once the application is submitted to the Master node, the Master node will tell one of the Workers to start the "Driver" process. This Driver process is the heart of the Spark job.
 

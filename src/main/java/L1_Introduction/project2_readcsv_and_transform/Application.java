@@ -1,4 +1,4 @@
-package project2_readcsv_and_transform;
+package L1_Introduction.project2_readcsv_and_transform;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -8,7 +8,7 @@ import org.apache.spark.sql.SparkSession;
 import static org.apache.spark.sql.functions.concat;
 import static org.apache.spark.sql.functions.lit;
 
-import project3_write_to_sqlite.SQLiteWriter;
+import L1_Introduction.project3_write_to_sqlite.SQLiteWriter;
 
 import java.sql.SQLException;
 import java.util.Properties;

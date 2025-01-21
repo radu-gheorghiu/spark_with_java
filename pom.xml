@@ -133,7 +133,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>project3_write_to_sqlite.SQLiteTest</mainClass>
+                                    <mainClass>L1_Introduction.project3_write_to_sqlite.SQLiteTest</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
