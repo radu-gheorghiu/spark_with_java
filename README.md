@@ -54,3 +54,13 @@ The Driver contains all the code, but does not execute that code. The Worker Tas
 7. If an Executor process crashes, the Worker is capable of starting up again, if the Worker crashes, the Master can start it up again. But if the Driver node crashes, you can configure the Master can re-launch the program, but in a situation like that, the Executor nodes will have to be restarted, the instructions will have to be sent from the Driver to the Executors to start processing again.
 
 8. **Best practice in terms of performance**, depending on the number of cores on each worker, you should have at least 2x or 3x the number of Tasks as there are cores. So, if you have 4 cores, it would be good to have 8 to 12 Task threads running on that worker. You can configure how many Task Threads the Executor can spawn when you configure the Worker nodes.
+
+### Section 2. Spark Java Dataset API Basics
+
+One of the most important things mentioned in this section are:
+
+1. When you read in data into a Dataset, you have different options when processing the data and defining types for the data. You can let Spark decide the datatype for each column using `.option("inferSchema", true)` or you can define your own schema and apply it when reading the data using the `.schema(defined_schema)` command.
+
+2. Also, when working with JSON files, it's important to remember that there are 2 major types of JSON files:
+- [single line JSON files](/src/main/resources/simple.json) - where each row in the JSON file is equivalent to a row in the Dataset
+- [multiline JSON files](/src/main/resources/multiline.json) - where each JSON entry is identified by Spark as a row, automatically
