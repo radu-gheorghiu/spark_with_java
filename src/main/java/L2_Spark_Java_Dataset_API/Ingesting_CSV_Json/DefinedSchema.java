@@ -1,16 +1,11 @@
-package L2_Spark_Java_Dataset_API;
+package L2_Spark_Java_Dataset_API.Ingesting_CSV_Json;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.types.DataType;
 import org.apache.spark.sql.types.DataTypes;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
-import shapeless.DataT;
-
-import javax.xml.crypto.Data;
-import java.sql.Struct;
 
 public class DefinedSchema {
 

@@ -1,6 +1,4 @@
-package L2_Spark_Java_Dataset_API;
-
-import L2_Spark_Java_Dataset_API.InferSchema;
+package L2_Spark_Java_Dataset_API.Ingesting_CSV_Json;
 
 public class Application {
     public static void main(String[] args){

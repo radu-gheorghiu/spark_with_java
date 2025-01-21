@@ -1,4 +1,4 @@
-package L2_Spark_Java_Dataset_API;
+package L2_Spark_Java_Dataset_API.Ingesting_CSV_Json;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
