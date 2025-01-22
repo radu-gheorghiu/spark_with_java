@@ -1,6 +1,6 @@
 ## Master Apache Spark - Hands On! (with Java)
 
-### Notes from the Udemy course ["Master Apache Spark - Hands On!"](udemy.com/course/the-ultimate-apache-spark-with-java-course-hands-on)
+### Notes from the Udemy course ["Master Apache Spark - Hands On!"](https://udemy.com/course/the-ultimate-apache-spark-with-java-course-hands-on)
 
 Although I have some professional experience with Spark, I haven't worked with the Java API and I need to have my skills sharpened for a new project I am going to be part of. I've had colleagues recommend this course to me, so I decided to also take up some random notes of things I want to refresh and remember.
 
