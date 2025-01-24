@@ -20,7 +20,7 @@ public class Application {
         // get data
         Dataset<Row> df = spark.read().format("csv")
                 .option("header", true)
-                .load("src/main/resources/name_and_comments.txt");
+                .load("src/main/resources/L1/name_and_comments.txt");
 
 		df.show(3);
 
@@ -34,7 +34,7 @@ public class Application {
 
         Dataset<Row> df2 = spark.read().format("csv")
                 .option("header", true)
-                .load("src/main/resources/sample_data.csv");
+                .load("src/main/resources/L1/sample_data.csv");
 
         df2.select("ID", "Name", "Salary", "Department")
                 .where("Salary > 50000")

@@ -62,5 +62,5 @@ One of the most important things mentioned in this section are:
 1. When you read in data into a Dataset, you have different options when processing the data and defining types for the data. You can let Spark decide the datatype for each column using `.option("inferSchema", true)` or you can define your own schema and apply it when reading the data using the `.schema(defined_schema)` command.
 
 2. Also, when working with JSON files, it's important to remember that there are 2 major types of JSON files:
-- [single line JSON files](/src/main/resources/simple.json) - where each row in the JSON file is equivalent to a row in the Dataset
-- [multiline JSON files](/src/main/resources/multiline.json) - where each JSON entry is identified by Spark as a row, automatically
+- [single line JSON files](/L1/simple.json) - where each row in the JSON file is equivalent to a row in the Dataset
+- [multiline JSON files](/L1/multiline.json) - where each JSON entry is identified by Spark as a row, automatically

@@ -25,7 +25,7 @@ public class Application {
         // get data
         Dataset<Row> df = spark.read().format("csv")
                 .option("header", "true")
-                .load("src/main/resources/sample_data.csv");
+                .load("src/main/resources/L1/sample_data.csv");
 
         // show the contents of the dataframe
         df.show();
