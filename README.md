@@ -62,8 +62,8 @@ One of the most important things mentioned in this section are:
 1. When you read in data into a Dataset, you have different options when processing the data and defining types for the data. You can let Spark decide the datatype for each column using `.option("inferSchema", true)` or you can define your own schema and apply it when reading the data using the `.schema(defined_schema)` command.
 
 2. Also, when working with JSON files, it's important to remember that there are 2 major types of JSON files:
-- [single line JSON files](/L1/simple.json) - where each row in the JSON file is equivalent to a row in the Dataset
-- [multiline JSON files](/L1/multiline.json) - where each JSON entry is identified by Spark as a row, automatically
+- [single line JSON files](src/main/resources/L1/simple.json) - where each row in the JSON file is equivalent to a row in the Dataset
+- [multiline JSON files](src/main/resources/L1/multiline.json) - where each JSON entry is identified by Spark as a row, automatically
 
 3. In the 2.4 lesson, "Union Dataframes and Other Set Transformations", one of the interesting things mentioned is that usually spark creates a partition for each dataframe, if the data being stored is up to 128mb.
 
@@ -73,4 +73,12 @@ One of the most important things mentioned in this section are:
 
    ![different_operations](/media/img8.png)
 
-5. 
+5. In the final lesson of this Chapter, called "Converting between Datasets and Dataframes" we're exposed to two concepts in Spark with Java, the Dataset and the Dataframe.
+
+   ![dataset_vs_dataframe](/media/img9.png)
+   
+   When developing Spark applications, we should always strive to work with Dataframes (Dataset<Row>) objects because they are far more efficient at working and transforming data than the Dataset objects. This final lesson takes us through how can can do this conversion.
+
+   Make sure to check out the code for a more in-depth view of how a Dataset vs a Dataframe works, how to switch between them. You can find this in the [ArrayToDataset class](/src/main/java/L2_Spark_Java_Dataset_API/Converting_Between_Datasets_and_Dataframes/ArrayToDataset.java)
+
+   ![dataset_vs_dfs](/media/img10.png)
