@@ -64,3 +64,13 @@ One of the most important things mentioned in this section are:
 2. Also, when working with JSON files, it's important to remember that there are 2 major types of JSON files:
 - [single line JSON files](/L1/simple.json) - where each row in the JSON file is equivalent to a row in the Dataset
 - [multiline JSON files](/L1/multiline.json) - where each JSON entry is identified by Spark as a row, automatically
+
+3. In the 2.4 lesson, "Union Dataframes and Other Set Transformations", one of the interesting things mentioned is that usually spark creates a partition for each dataframe, if the data being stored is up to 128mb.
+
+   However, if we will apply a UNION on the dataframes, even if the combined data in both dataframes is less than 128mb, by default it will have 2 partitions. But, if we repartition the dataframe obtained after the UNION operation, we can reduce it to 1.
+
+4. Then, just as in SQL there are different SET operations which you can apply to your dataframe, like UNION, INTERSECT and EXCEPT.
+
+   ![different_operations](/media/img8.png)
+
+5. 
