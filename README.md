@@ -82,3 +82,24 @@ One of the most important things mentioned in this section are:
    Make sure to check out the code for a more in-depth view of how a Dataset vs a Dataframe works, how to switch between them. You can find this in the [ArrayToDataset class](/src/main/java/L2_Spark_Java_Dataset_API/Converting_Between_Datasets_and_Dataframes/ArrayToDataset.java)
 
    ![dataset_vs_dfs](/media/img10.png)
+
+### Section 3. Diving Deeper with Datasets, Dataframes and Transformations
+
+1. During the lesson ["Joining Dataframes and Using Various Filter Transformations"](https://accesa.udemy.com/course/the-ultimate-apache-spark-with-java-course-hands-on/learn/lecture/12186774#overview) , one of the most important lessons to remember is that when using a `.filter()` and a `select()` operation, the order of the operation matters.
+
+```
+Dataset<Row> studentDetails = studentsDf.join(gradesDf, 
+                                 studentsDf.col("GPA")
+                                 .equalTo(gradesDf.col("GPA")))
+   .filter(studentsDf.col("GPA").between(2, 4))
+   .select(
+      studentsDf.col("student_id"),
+      studentsDf.col("student_name"),
+      studentsDf.col("State"),
+      studentsDf.col("favorite_book_title"),
+      studentsDf.col("working"),
+      gradesDf.col("letter_grade")
+);
+```
+
+In the code snippet above if we were to try and move the `.filter(studentsDf.col("GPA"))` condition after the `select()` operation, we would have an error saying that the "GPA" column is missing. As opposed to SQL, in the Spark API, the order of the operations matter, so it would be best to apply a general best practice which is to always **filter before you select**.
