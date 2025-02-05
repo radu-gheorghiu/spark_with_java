@@ -21,5 +21,10 @@ public class Application {
 
         String products_file = "src/main/resources/L3/products.csv";
 
+        Dataset<Row> productsDf = spark.read().format("csv")
+                .option("inferSchema", true)
+                .option("header", true)
+                .load(products_file);
+
     }
 }
