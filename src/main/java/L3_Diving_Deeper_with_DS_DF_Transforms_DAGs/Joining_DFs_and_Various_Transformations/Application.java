@@ -23,7 +23,7 @@ public class Application {
                 .load(gradeChartFile);
 
         Dataset<Row> studentDetails = studentsDf.join(gradesDf, studentsDf.col("GPA").equalTo(gradesDf.col("GPA")))
-                .filter(studentsDf.col("GPA").between(2, 4))
+                .where(studentsDf.col("GPA").between(2, 4))
                 .select(
                         studentsDf.col("student_id"),
                         studentsDf.col("student_name"),
@@ -33,7 +33,25 @@ public class Application {
                         studentsDf.col("working"),
                         gradesDf.col("letter_grade")
                 );
-        studentDetails.show(5);
+        studentDetails.show(3);
+
+        // we can also use a filter operator instead of a where, for the same functionality
+        Dataset<Row> filteredStudentDetails = studentsDf.join(gradesDf, studentsDf.col("GPA").equalTo(gradesDf.col("GPA")))
+                .where(
+                        studentsDf.col("GPA").between(2, 4)
+                                .and(studentsDf.col("working").equalTo("true"))
+                )
+                .select(
+                        studentsDf.col("student_id"),
+                        studentsDf.col("student_name"),
+                        studentsDf.col("State"),
+                        studentsDf.col("GPA"),
+                        studentsDf.col("favorite_book_title"),
+                        studentsDf.col("working"),
+                        gradesDf.col("letter_grade")
+                );
+
+        filteredStudentDetails.show(3);
 
     }
 }
